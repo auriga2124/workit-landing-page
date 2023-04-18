@@ -1,0 +1,629 @@
+/* CSS Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.4s;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+    list-style: none;
+}
+
+/* Remove default link style */
+a {
+    text-decoration: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*----- Mobile First -----*/
+:root {
+    /*Colors*/
+    --dark-purple: hsl(273, 85%, 17%);
+    --davy-grey: hsl(271, 12%, 34%);
+    --eucalyptus: hsl(150, 100%, 63%);
+    --ghost-white: hsl(276, 100%, 99%);
+    --white: hsl(0, 0%, 100%);   
+}
+
+@font-face {
+    font-family: "Fraunces";
+    src: url(./assets/fonts/fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url(./assets/fonts/manrope/Manrope-VariableFont_wght.ttf);
+}
+
+body {
+    font-family: "Manrope", serif;
+    font-size: 18px;
+    background: var(--white);   
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 578px;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: '';
+    border-radius: 0 0 50% 50% / 0 0 20% 20%;
+    position: absolute;
+    background-color: var(--dark-purple);
+    width: 100%;
+    height: 480px;
+    top: 0;
+    left: 0;
+    transform: scaleX(1.5); 
+}
+
+.hero .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 16px;
+    z-index: 1;
+}
+
+.bg1,
+.bg2,
+.bg3 {
+    display: none;
+}
+
+.hero__text {
+    font-family: "Fraunces", serif;
+    font-size: 47px;
+    line-height: 1;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.hero__text_font-underline {
+    text-decoration: underline;
+    text-decoration-color: var(--eucalyptus);
+}
+
+.hero__image {
+    width: 320px;
+}
+
+.logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 64px;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: -0.16px;
+    width: fit-content;
+    padding: 0;
+    border: none;
+    border-bottom: 3px solid var(--eucalyptus);
+    color: var(--white);
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: var(--eucalyptus);
+}
+
+.btn_primary {
+    width: 133px;
+    height: 55px;
+    margin-bottom: 64px;
+    border: 3px solid var(--eucalyptus);
+    background: var(--eucalyptus);
+    color: var(--dark-purple);
+}
+
+.btn_primary:hover {
+    background: transparent;
+    color: var(--eucalyptus);
+}
+
+.concept {
+    position: relative;
+    width: 100%;
+    margin-top: -168px;
+    margin-bottom: 100px;
+    z-index: -100;
+    overflow: hidden;
+}
+
+.concept:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 50% 50% / 0 0 20% 20%;
+    transform: scaleX(2);
+    background: var(--ghost-white);
+}
+
+.concept .concept__card-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 0 16px;
+    padding-top: 246px;
+    padding-bottom: 71px;
+}
+
+.concept__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.concept__card-number {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 48px;
+    height: 46px;
+    border: 1px solid var(--davy-grey);
+    border-radius: 50%;
+    margin-bottom: 24px;
+    text-align: center;
+    line-height: 2;
+}
+
+.concept__card-heading {
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.concept__card-description {
+    font-family: "Manrope", serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    text-align: center;
+}
+
+.bio {
+    margin: 0 16px;
+}
+
+.bio__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bio__text {
+    background: var(--dark-purple);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 31px;
+    margin-bottom: 74px;
+}
+
+.bio__text .btn_primary {
+    margin-bottom: 0;
+}
+
+.bio__image {
+    width: 281px;
+    height: 281px;
+    margin-bottom: -54px;
+}
+
+.bio__heading {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.bio__description {
+    font-family: 'Manrope', serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 24px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 57px;
+    margin-bottom: 63px;
+}
+
+.socials {
+    display: flex;
+    gap: 28px;
+}
+
+/*---- Breakpoint Tablet View ----*/
+@media screen and (min-width: 426px) {
+    .hero {
+        height: 720px;
+    }
+
+    .hero:before {
+        height: 580px;
+    }
+
+    .hero__image {
+        width: 514px;
+    }
+
+    .hero .content {
+        margin: 0 40px;
+    }
+
+    .hero__text {
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 39px;
+        padding: 0 8rem;
+    }
+
+    .bg1,
+    .bg2,
+    .bg3 {
+    display: block;
+    }
+
+    .bg1 {
+        position: absolute;
+        top: 105px;
+        left: -265px;
+        z-index: 99999;
+    }
+
+    .bg2 {
+        position: absolute;
+        top: 300px;
+        right: -132px;
+        z-index: 99999;
+    }
+
+    .concept .concept__card-wrapper {
+        margin: 0 97px;
+    }
+
+    .concept__card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .concept__card-number {
+        width: 48px;
+        height: 48px;
+        padding: 0 16px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 2;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .concept__card-heading {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .concept__card-description {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.75;
+        text-align: left;
+    }
+
+    .bio {
+        height: 526px;
+        margin: 0 40px;
+        margin-bottom: 80px;
+    }
+
+    .bg3 {
+        position: absolute;
+        top: 1838px;
+        left: 500px;
+        z-index: 99999;
+    }
+
+    .bio__wrapper {
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+
+    .bio__image {
+        width: 281px;
+        height: 281px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .bio__text {
+        display: block;
+        width: 514px;
+        height: 375px;
+        padding: 56px;
+        position: absolute;
+        left: 177px;
+        top: 144px;
+        z-index: 1;
+    }
+
+    .bio__heading {
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 24px;
+    }
+
+    .bio__description {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.7;
+        margin-bottom: 24px;
+        padding: 0;
+        text-align: left;
+    }
+
+    .btn {
+        width: 172px;
+        height: 55px;
+    }
+
+    .btn_secondary {
+        width: fit-content;
+        height: 34px;
+    }
+
+    .footer {
+        margin-bottom: 121px;
+    }
+}
+/*---- Breakpoint Desktop View ----*/
+@media screen and (min-width: 900px) {
+    .hero .content,
+    .concept__card-wrapper,
+    .bio {
+        max-width: 1110px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero:before {
+        height: 730px;
+    }
+
+    .logo-wrapper {
+        padding-top: 80px;
+    }
+
+    .bg1 {
+        position: absolute;
+        top: 115px;
+        left: -300px;
+        z-index: 99999;
+    }
+
+    .bg2 {
+        position: absolute;
+        top: 314px;
+        right: -214px;
+        z-index: 99999;
+    }
+
+    .hero__text {
+        font-size: 80px;
+        padding: 0 15rem;
+    }
+
+    .hero__image {
+        width: 76%;
+    }
+
+    .concept {
+        margin-top: -320px;
+        margin-bottom: 110px;
+    }
+
+    .concept:before {
+        height: 960px;
+        transform: scaleX(1.5);
+    }
+    
+    .concept .concept__card-wrapper {
+        margin: 0 auto;
+        padding-top: 481px;
+        padding-bottom: 171px;
+    }
+
+    .concept__card {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .concept__card-number {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 2;
+        margin-bottom: 56px;
+        font-family: "Fraunces", serif;
+    }
+
+    .concept__card-heading {
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
+
+    .concept__card-description {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .bio {
+        margin-bottom: 60px;
+        height: 647px;
+    }
+
+    .bio__wrapper {
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+    
+    .bio__image {
+        width: 477px;
+        height: 477px;
+        position: absolute;
+        left: 0;
+    }
+
+    .bio__text {
+        display: block;
+        width: 730px;
+        height: 413px;
+        padding: 64px;
+        position: absolute;
+        left: 375px;
+        top: 150px;
+        z-index: 1;
+    }
+
+    .bio__heading {
+        font-size: 56px;
+        line-height: 1.1;
+        margin-bottom: 32px;
+    }
+
+    .bio__description {
+        font-size: 18px;
+        line-height: 1.7;
+        text-align: left;
+        margin-bottom: 32px;
+        padding: 0;  
+    }
+
+    .bg3 {
+        position: absolute;
+        top: 2160px;
+        left: 985px;
+        z-index: 99999;
+    }
+
+    .footer {
+        margin-bottom: 110px;
+    }
+} 
