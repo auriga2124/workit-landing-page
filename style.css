@@ -335,7 +335,7 @@ body {
 }
 
 /*---- Breakpoint Tablet View ----*/
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 768px) {
     .hero {
         height: 720px;
     }
@@ -345,7 +345,7 @@ body {
     }
 
     .hero__image {
-        width: 514px;
+        width: 74.7%;
     }
 
     .hero .content {
@@ -447,7 +447,7 @@ body {
 
     .bio__text {
         display: block;
-        width: 514px;
+        width: 74.6%;
         height: 375px;
         padding: 56px;
         position: absolute;
@@ -487,7 +487,7 @@ body {
     }
 }
 /*---- Breakpoint Desktop View ----*/
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
     .hero .content,
     .concept__card-wrapper,
     .bio {
@@ -529,7 +529,7 @@ body {
     }
 
     .hero__image {
-        width: 76%;
+        width: 70%;
     }
 
     .concept {
@@ -585,7 +585,7 @@ body {
     }
     
     .bio__image {
-        width: 477px;
+        width: 42.97%;
         height: 477px;
         position: absolute;
         left: 0;
@@ -593,7 +593,7 @@ body {
 
     .bio__text {
         display: block;
-        width: 730px;
+        width: 65.76%;
         height: 413px;
         padding: 64px;
         position: absolute;
